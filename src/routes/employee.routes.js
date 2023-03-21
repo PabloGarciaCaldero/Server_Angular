@@ -13,6 +13,6 @@ router.put("/:id", employee.editEmployee);
 
 router.delete("/:id", employee.deleteEmployee);
 
-router.delete("/"), employee.deleteAllEmployees
+router.delete("/", employee.deleteAllEmployees);
 
 module.exports = router;

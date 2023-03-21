@@ -1,6 +1,7 @@
 const { filter } = require("mongodb/lib/core/connection/logger");
 const Employee = require("../models/employee");
 const employee = require("../models/employee");
+const mongoose = require("mongoose");
 
 const employeeCtrl = {};
 
@@ -38,7 +39,7 @@ employeeCtrl.deleteEmployee = async (req, res, next) => {
 };
 
 employeeCtrl.deleteAllEmployees = async (req, res, next) => {
-  await Employee.deleteMany();
+  await Employee.deleteMany({});
   res.json({status:"All Employees Deleted"})
 }
 
